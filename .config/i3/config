@@ -79,12 +79,14 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec kitty
-# start firefox
-bindsym $mod+x exec firefox
+# start chromium
+bindsym $mod+x exec chromium
 # start bluetuith
 bindsym $mod+KP_End exec kitty bluetuith
 # start nmtui
 bindsym $mod+KP_Left exec kitty nmtui
+# start pavucontrol
+bindsym $mod+KP_Home exec pavucontrol
 
 # custom variables for workspaces
 set $ws1 1
@@ -103,6 +105,9 @@ set $ws9 9
 #assign [class="firefox"] $ws3
 #assign [class="kitty"] $ws1
 #assign [class="discord"] $ws4
+
+# app specific setting
+for_window [class="GLava"] floating enable, above, default_border none, opacity 1
 
 # pin focused floating window
 bindsym $mod+p sticky enable
@@ -241,6 +246,9 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 #Remove titlebar
 default_border pixel 1
 default_floating_border pixel 1
+
+#Hide the border of the edge of the screen
+hide_edge_borders smart
 
 #make the hover focus
 focus_follows_mouse yes
