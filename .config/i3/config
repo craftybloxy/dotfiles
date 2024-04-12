@@ -32,8 +32,6 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --blur 5
 
-
-
 # Picom is a compositor to remove tearing and improve everything
 exec --no-startup-id picom
 
@@ -41,17 +39,17 @@ exec --no-startup-id picom
 exec --no-startup-id dunst
 
 # Starts polybar
-exec_always ~/.config/i3/polybar.sh &
+exec_always xinit && ~/.config/i3/polybar.sh &
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec pamixer -i 5 
-bindsym XF86AudioLowerVolume exec pamixer -d 5 
+bindsym XF86AudioRaiseVolume exec pamixer -i 10
+bindsym XF86AudioLowerVolume exec pamixer -d 10
 bindsym XF86AudioMute exec pamixer -t 
 bindsym XF86AudioMicMute exec pamixer -t 
 # Same on numpad
 bindsym shift+KP_Home exec pamixer -t 
-bindsym shift+KP_Up exec pamixer -d 5 
-bindsym shift+KP_Prior exec pamixer -i 5 
+bindsym shift+KP_Up exec pamixer -d 10
+bindsym shift+KP_Prior exec pamixer -i 10
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -64,8 +62,9 @@ bindsym shift+KP_Begin exec playerctl previous
 bindsym shift+KP_Right exec playerctl next
 
 #Brightness control
-bindsym XF86MonBrightnessUp exec brightnessctl s +10% > /dev/null && notify-send Brightness $(($(brightnessctl get) * 10 / 937 * 10))% -h string:x-canonical-private-synchronous:brightness_percentage --app-name System
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%- > /dev/null && notify-send Brightness $(($(brightnessctl get) * 10 / 937 * 10))% -h string:x-canonical-private-synchronous:brightness_percentage --app-name System
+bindsym XF86MonBrightnessUp exec brightnessctl s +10% 
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%- 
+
 # Same on numpad
 bindsym shift+KP_Next exec brightnessctl s +10% > /dev/null 
 bindsym shift+KP_Down exec brightnessctl s 10%- > /dev/null 
@@ -77,14 +76,24 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
+# start chromium in normal mode
+bindsym $mod+x exec ungoogled-chromium --profile-directory="Default"
+
+# start chromium in study mode
+bindsym $mod+c exec ungoogled-chromium --profile-directory="Profile 1"
+
+# start thunar
+bindsym $mod+w exec thunar
+
 # start a terminal
 bindsym $mod+Return exec kitty
-# start chromium
-bindsym $mod+x exec chromium
+
 # start bluetuith
-bindsym $mod+KP_End exec kitty bluetuith
+bindsym $mod+KP_End exec kitty /home/crafty/Scripts/bluetuith
+
 # start nmtui
 bindsym $mod+KP_Left exec kitty nmtui
+
 # start pavucontrol
 bindsym $mod+KP_Home exec pavucontrol
 

@@ -8,7 +8,7 @@
 ; mode = scientific
 
 # Accepts only non-negative values.
-; framerate = 60
+; framerate = 90
 
 # 'autosens' will attempt to decrease sensitivity if the bars peak. 1 = on, 0 = off
 # new as of 0.6.0 autosens of low values (dynamic range)
@@ -200,7 +200,7 @@ gradient_color_8 = '#cc3333'
 # DEPRECATED as of 0.8.0, use noise_reduction instead
 ; noise_reduction 100
 # Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
-; monstercat = 0
+; monstercat = 1
 ; waves = 0
 
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.
@@ -216,7 +216,7 @@ gravity = 100
 # Noise reduction, int 0 - 100. default 77
 # the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
 # 100 will be very slow and smooth, 0 will be fast but noisy.
-noise_reduction = 0
+noise_reduction = 4
 
 
 [eq]
