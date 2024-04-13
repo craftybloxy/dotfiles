@@ -1,0 +1,1 @@
+i3 polybar lutris pulseaudio tlp playerctl pamixer nitrogen dex xss-lock networkmanager picom dunst kitty bluetuith firefox maim xclip  ttf-roboto-mono-nerd nerd-fonts-noto-sans-mono-extended  cobang thunar thunar-archive-plugin thunar-volman lxappearance fish ungoogled-chromium museeks-bin vlc cava ark
