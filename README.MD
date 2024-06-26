@@ -1,6 +1,7 @@
 # Packages
+'''
 i3 polybar lutris pulseaudio tlp playerctl pamixer nitrogen dex xss-lock networkmanager picom dunst alacritty bluetuith firefox maim xclip nerd-fonts cobang thunar thunar-archive-plugin thunar-volman lxappearance fish ungoogled-chromium museeks-bin vlc cava ark
-
+'''
 # add the alias to your shell's config
 ```
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
