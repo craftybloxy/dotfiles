@@ -30,7 +30,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --blur 5
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -e -c 000000
 
 # Picom is a compositor to remove tearing and improve everything
 exec --no-startup-id picom
@@ -38,14 +38,11 @@ exec --no-startup-id picom
 # Dunst is a notification daemon
 exec --no-startup-id dunst
 
-# Starts polybar
-exec_always xinit && ~/.config/i3/polybar.sh &
-
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec pamixer -i 10
 bindsym XF86AudioLowerVolume exec pamixer -d 10
 bindsym XF86AudioMute exec pamixer -t 
-bindsym XF86AudioMicMute exec pamixer -t 
+bindsym XF86AudioMicMute exec pamixer --default-source -t 
 # Same on numpad
 bindsym shift+KP_Home exec pamixer -t 
 bindsym shift+KP_Up exec pamixer -d 10
@@ -77,22 +74,22 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start chromium in normal mode
-bindsym $mod+x exec ungoogled-chromium --profile-directory="Default"
+bindsym $mod+x exec chromium --profile-directory="Default"
 
 # start chromium in study mode
-bindsym $mod+c exec ungoogled-chromium --profile-directory="Profile 1"
+bindsym $mod+c exec chromium --profile-directory="Profile 1"
 
 # start thunar
 bindsym $mod+w exec thunar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # start bluetuith
-bindsym $mod+KP_End exec kitty /home/crafty/Scripts/bluetuith
+bindsym $mod+KP_End exec alacritty -e bluetuith
 
 # start nmtui
-bindsym $mod+KP_Left exec kitty nmtui
+bindsym $mod+KP_Left exec alacritty -e nmtui
 
 # start pavucontrol
 bindsym $mod+KP_Home exec pavucontrol
@@ -112,7 +109,7 @@ set $ws9 9
 ##=================================================##
 # Assign Workspaces:
 #assign [class="firefox"] $ws3
-#assign [class="kitty"] $ws1
+#assign [class="alacritty"] $ws1
 #assign [class="discord"] $ws4
 
 # app specific setting
@@ -252,6 +249,12 @@ bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t ima
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png 
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png 
 
+#Toggle i3bar
+bindsym $mod+b bar mode toggle
+
+#toggle title bar
+bindsym $mod+n border toggle
+
 #Remove titlebar
 default_border pixel 1
 default_floating_border pixel 1
@@ -262,4 +265,7 @@ hide_edge_borders smart
 #make the hover focus
 focus_follows_mouse yes
 
-
+bar {
+	position top
+        status_command i3status
+}
