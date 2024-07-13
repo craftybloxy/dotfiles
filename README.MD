@@ -21,4 +21,5 @@ config checkout
 ```
 
 # credits
-https://gist.github.com/fbrinker/df9cfbc84511d807f45041737ff3ea02?permalink_comment_id=4972587#gistcomment-4972587
+Bare repo trick - https://www.atlassian.com/git/tutorials/dotfiles
+Swapping worksapces betwween two screens - https://gist.github.com/fbrinker/df9cfbc84511d807f45041737ff3ea02?permalink_comment_id=4972587#gistcomment-4972587
