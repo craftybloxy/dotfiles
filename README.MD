@@ -19,7 +19,7 @@ git clone --bare https://github.com/craftybloxy/dotfiles/ $HOME/.cfg
 # apply the changes
 ```shell
 config checkout
-```a
+```
 
 # credits
 |info|link|
