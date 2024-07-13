@@ -19,3 +19,6 @@ git clone --bare https://github.com/craftybloxy/dotfiles/ $HOME/.cfg
 ```shell
 config checkout
 ```
+
+# credits
+https://gist.github.com/fbrinker/df9cfbc84511d807f45041737ff3ea02?permalink_comment_id=4972587#gistcomment-4972587
