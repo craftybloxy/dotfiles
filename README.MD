@@ -1,3 +1,4 @@
+
 # Packages
 ```shell
 i3 polybar lutris pulseaudio tlp playerctl pamixer nitrogen dex xss-lock networkmanager picom dunst alacritty bluetuith firefox maim xclip nerd-fonts cobang thunar thunar-archive-plugin thunar-volman lxappearance fish ungoogled-chromium museeks-bin vlc cava ark
@@ -18,8 +19,11 @@ git clone --bare https://github.com/craftybloxy/dotfiles/ $HOME/.cfg
 # apply the changes
 ```shell
 config checkout
-```
+```a
 
 # credits
-Bare repo trick - https://www.atlassian.com/git/tutorials/dotfiles
-Swapping worksapces betwween two screens - https://gist.github.com/fbrinker/df9cfbc84511d807f45041737ff3ea02?permalink_comment_id=4972587#gistcomment-4972587
+|info|link|
+|------|------|
+|Bare repo trick|https://www.atlassian.com/git/tutorials/dotfiles |
+|Swapping worksapces betwween two screens |https://gist.github.com/fbrinker/df9cfbc84511d807f45041737ff3ea02?permalink_comment_id=4972587#gistcomment-4972587|
+
