@@ -1,0 +1,35 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=false
+separator_block_width=15
+
+
+
+
+[mediaplayer]
+color=#98DDCA
+command=~/.config/i3blocks/mediaplayer.sh
+interval=1
+signal=10
+
+[volume-pipewire]
+command=~/.config/i3blocks/default_sink.sh
+color=#D5ECC2
+interval=1
+signal=1
+
+[battery]
+interval=2
+command=/home/crafty/.config/i3blocks/battery.sh
+
+[time]
+color=#FFAAA7
+command=if [ $button ]; then /home/crafty/.config/i3blocks/calendar.sh && date '+%Y/%m/%d %H:%M:%S'; else date '+%Y/%m/%d %H:%M:%S';fi
+interval=1
