@@ -73,23 +73,24 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
+# start firefox
+bindsym $mod+x exec firefox
 # start chromium in normal mode
-bindsym $mod+x exec chromium --profile-directory="Default"
-
+# bindsym $mod+x exec chromium --profile-directory="Default"
 # start chromium in study mode
-bindsym $mod+c exec chromium --profile-directory="Profile 1"
+# bindsym $mod+c exec chromium --profile-directory="Profile 1"
 
 # start thunar
 bindsym $mod+w exec thunar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # start bluetuith
-bindsym $mod+KP_End exec alacritty -e bluetuith
+bindsym $mod+KP_End exec kitty bluetuith
 
 # start nmtui
-bindsym $mod+KP_Left exec alacritty -e nmtui
+bindsym $mod+KP_Left exec kitty nmtui
 
 # start pavucontrol
 bindsym $mod+KP_Home exec pavucontrol
@@ -112,8 +113,11 @@ set $ws9 9
 #assign [class="alacritty"] $ws1
 #assign [class="discord"] $ws4
 
-# app specific setting
-for_window [class="GLava"] floating enable, above, default_border none, opacity 1
+# move focused worksapce to the next monitor.
+bindsym $mod+c move workspace to output next
+
+# swap the workspace on two screens
+bindsym $mod+s exec --no-startup-id ~/.config/i3/switch_screen.sh
 
 # pin focused floating window
 bindsym $mod+p sticky enable
@@ -122,12 +126,12 @@ bindsym $mod+p sticky enable
 bindsym $mod+Shift+a kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec ~/.config/rofi/launchers/type-1/launcher.sh
+bindsym $mod+d exec rofi -show drun
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+m focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -148,7 +152,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -157,7 +161,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -265,7 +269,9 @@ hide_edge_borders smart
 #make the hover focus
 focus_follows_mouse yes
 
+
 bar {
+	font pango: JetBrainsMono Nerd Font Bold 10
 	position top
-        status_command i3status
+        status_command i3blocks
 }
