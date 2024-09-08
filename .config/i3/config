@@ -119,6 +119,13 @@ bindsym $mod+c move workspace to output next
 # swap the workspace on two screens
 bindsym $mod+s exec --no-startup-id ~/.config/i3/switch_screen.sh
 
+# swap the output
+bindsym  shift+KP_End exec --no-startup-id ~/.config/i3/hdmi_switch_screen.sh
+
+
+# swap the hdmi screen's brightness
+# bindsym $mod+exclam exec --no-startup-id ~/.config/i3/hdmi_brightness_control.sh
+
 # pin focused floating window
 bindsym $mod+p sticky enable
 
