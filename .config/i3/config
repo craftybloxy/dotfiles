@@ -38,7 +38,7 @@ default_floating_border pixel 1
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/crafty/.config/i3/i3lock.sh
+exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/crafty/.config/i3/lock
 
 #Picom is a compositor
 exec --no-startup-id picom
@@ -49,11 +49,13 @@ exec --no-startup-id nitrogen --restore
 #Prevent the computer from going to sleep
 exec --no-startup-id /home/crafty/.config/i3/no_sleep.sh
 
+# Autostart .desktop
+exec --no-startup-id dex -a
 #
 # KEYBINDINGS TO START APPS
 #
 
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id kitty
 bindsym $mod+w exec --no-startup-id thunar
 bindsym $mod+x exec --no-startup-id firefox
 bindsym $mod+KP_End exec --no-startup-id kitty bluetuith
@@ -105,7 +107,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 # change hdmi's brightness
 bindsym shift+KP_End exec --no-startup-id /home/crafty/.config/i3/hdmi_brightness_control.sh
 # switch output between either two screen
-bindsym shift+KP_Delete exec --no-startup-id /home/crafty/.config/i3/hdmi_switch_screen.sh
+bindsym shift+KP_Delete exec --no-startup-id xrandr --output eDP1 --off
 # Use the two screen at the same time
 bindsym shift+KP_Enter exec --no-startup-id xrandr --auto --output HDMI1 --right-of eDP1
 # move focused worksapce to the next monitor.
