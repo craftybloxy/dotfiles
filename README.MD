@@ -19,3 +19,7 @@ git clone --bare https://github.com/craftybloxy/dotfiles/ $HOME/.cfg
 ```shell
 config checkout
 ```
+# remove untracked files
+```shell
+config config --local status.showUntrackedFiles no
+```
