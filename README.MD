@@ -1,6 +1,6 @@
 # Packages
 ```shell
-i3 polybar lutris pulseaudio tlp playerctl pamixer nitrogen dex xss-lock networkmanager picom dunst alacritty bluetuith firefox maim xclip nerd-fonts cobang thunar thunar-archive-plugin thunar-volman lxappearance fish ungoogled-chromium museeks-bin vlc cava ark sptlrx helix strawberry cavalier
+i3 yazi lutris pulseaudio tlp playerctl pamixer nitrogen dex xss-lock networkmanager picom dunst alacritty bluetuith firefox maim xclip nerd-fonts cobang thunar thunar-archive-plugin thunar-volman lxappearance fish ungoogled-chromium museeks-bin vlc cava ark sptlrx helix strawberry cavalier
 ```
 
 # add the alias to your shell's config

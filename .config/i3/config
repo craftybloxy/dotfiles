@@ -47,7 +47,7 @@ exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore
 
 #Prevent the computer from going to sleep
-exec --no-startup-id /home/crafty/.config/i3/no_sleep.sh
+exec --no-startup-id xset s off -dpms
 
 # Autostart .desktop
 exec --no-startup-id dex -a
@@ -62,6 +62,7 @@ bindsym $mod+KP_End exec --no-startup-id kitty bluetuith
 bindsym $mod+KP_Left exec --no-startup-id kitty nmtui
 bindsym $mod+KP_Home exec --no-startup-id pavucontrol
 bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+g exec --no-startup-id rofi-rbw
 
 #
 # KEYBINDS TO CONTROL i3
@@ -109,7 +110,7 @@ bindsym shift+KP_End exec --no-startup-id /home/crafty/.config/i3/hdmi_brightnes
 # switch output between either two screen
 bindsym shift+KP_Delete exec --no-startup-id xrandr --output eDP1 --off
 # Use the two screen at the same time
-bindsym shift+KP_Enter exec --no-startup-id xrandr --auto --output HDMI1 --right-of eDP1
+bindsym shift+KP_Enter exec --no-startup-id xrandr --output eDP1 --left-of HDMI1 --auto
 # move focused worksapce to the next monitor.
 bindsym $mod+c move workspace to output next
 # swap the workspace on two screens
