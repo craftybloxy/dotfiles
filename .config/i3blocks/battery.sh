@@ -12,7 +12,7 @@ URGENT_VALUE=15
 if [[ "${BATTERY_STATE}" = "Charging" ]]; then
   echo "${BATTERY_POWER}% +󰂀"
   echo "${BATTERY_POWER}% +󰂀"
-  echo "#FFD3B4"
+  echo "#268bd2"
 elif [[ "${BATTERY_STATE}" = "Discharging" ]]; then
   echo "${BATTERY_POWER}% -󰂀"
   echo "${BATTERY_POWER}% -󰂀"
@@ -21,12 +21,12 @@ elif [[ "${BATTERY_STATE}" = "Discharging" ]]; then
     echo "#cc241d"
     notify-send -u critical "Battery low!" "Plug your laptop"
   else
-    echo "#FFD3B4"
+    echo "#268bd2"
   fi
   
 else
   echo "${BATTERY_POWER}% 󰂀"
   echo "${BATTERY_POWER}% 󰂀"
-  echo "#FFD3B4"
+  echo "#268bd2"
 fi
 
