@@ -14,14 +14,14 @@ separator_block_width=15
 
 
 [mediaplayer]
-color=#268bd2
+color=#64acff
 command=~/.config/i3blocks/mediaplayer.sh
 interval=1
 signal=10
 
 [volume-pipewire]
 command=~/.config/i3blocks/default_sink.sh
-color=#268bd2
+color=#64acff
 interval=1
 signal=1
 
@@ -30,6 +30,6 @@ interval=2
 command=/home/crafty/.config/i3blocks/battery.sh
 
 [time]
-color=#268bd2
+color=#64acff
 command=if [ $button ]; then /home/crafty/.config/i3blocks/calendar.sh && date '+%Y/%m/%d %H:%M:%S'; else date '+%Y/%m/%d %H:%M:%S';fi
 interval=1

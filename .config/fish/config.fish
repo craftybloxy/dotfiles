@@ -4,12 +4,12 @@ end
 alias "p"="paru"
 alias "po"="paru -Rsn $(pacman -Qdtq)"
 alias "co"="vscodium -g"
-alias "hx"="helix"
 alias "dv"="devour"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vpn="sudo openvpn --config ~/AirVPN.ovpn"
+set -g fish_greeting
 bind \cs "source ./venv/bin/activate.fish && echo "--venv--""
-set EDITOR helix
+set EDITOR hx
 
 #yazi stuff
 function y
@@ -20,3 +20,6 @@ function y
     end
     rm -f -- "$tmp"
 end
+
+# uv
+fish_add_path "/home/crafty/.local/bin"
