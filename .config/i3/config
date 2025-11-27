@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Noto Sans Mono 0
+font pango:Adwaita Mono 0
 #
 #
 # class                   border    backgr    text      indicator   child_border
@@ -66,12 +66,13 @@ exec --no-startup-id dex -a
 #
 
 bindsym $mod+Return exec --no-startup-id gnome-terminal
-bindsym $mod+w exec --no-startup-id nautilus
+bindsym $mod+w exec --no-startup-id thunar
 bindsym $mod+x exec --no-startup-id chromium
 bindsym $mod+KP_End exec --no-startup-id gnome-terminal -e bluetuith
 bindsym $mod+KP_Left exec --no-startup-id gnome-terminal -e nmtui
 bindsym $mod+KP_Home exec --no-startup-id pavucontrol
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rlaunch
+#bindsym $mod+d exec --no-startup-id rofi -show drun
 
 
 #
@@ -102,12 +103,12 @@ bindsym shift+KP_Begin exec playerctl previous
 bindsym shift+KP_Right exec playerctl next
 
 #Brightness control
-bindsym XF86MonBrightnessUp exec brightnessctl s +10% 
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%- 
+bindsym XF86MonBrightnessUp exec brightnessctl s 1000+ > /dev/null 
+bindsym XF86MonBrightnessDown exec brightnessctl s 1000- > /dev/null 
 
 # Same on numpad
-bindsym shift+KP_Next exec brightnessctl s +10% > /dev/null 
-bindsym shift+KP_Down exec brightnessctl s 10%- > /dev/null 
+bindsym shift+KP_Next exec brightnessctl s 1000+ > /dev/null 
+bindsym shift+KP_Down exec brightnessctl s 1000- > /dev/null 
 
 # Clipboard screenshots
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
@@ -123,7 +124,7 @@ bindsym shift+KP_Delete exec --no-startup-id xrandr --output eDP1 --off
 bindsym shift+KP_Enter exec --no-startup-id xrandr --output eDP1 --left-of HDMI1 --auto & nitrogen --restore
 # Init screens
 bindsym shift+End exec --no-startup-id xrandr --auto
-# move focused worksapce to the next monitor.
+# move focused workspace to the next monitor.
 
 bindsym $mod+c move workspace to output next
 # swap the workspace on two screens
@@ -222,6 +223,7 @@ bindsym $mod+underscore workspace number $ws8
 bindsym $mod+ccedilla workspace number $ws9
 bindsym $mod+agrave workspace number $ws10
 
+
 # move focused container to workspace
 bindsym $mod+Shift+ampersand move container to workspace number $ws1
 bindsym $mod+Shift+eacute move container to workspace number $ws2
@@ -283,6 +285,6 @@ bar {
 	}
     position top
     status_command i3blocks
-    font pango: Hack Bold 8
+    font pango: Noto , Mono 10
 }
 

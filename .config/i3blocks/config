@@ -19,11 +19,23 @@ command=~/.config/i3blocks/mediaplayer.sh
 interval=1
 signal=10
 
-[volume-pipewire]
+[volume-pactl]
+command=~/.config/i3blocks/volume.sh
+color=#64acff
+interval=1
+signal=1
+
+[sink-pactl]
 command=~/.config/i3blocks/default_sink.sh
 color=#64acff
 interval=1
 signal=1
+
+#[brightnessctl]
+#command=echo -n '󰃛 ' && brightnessctl -m | cut -d',' -f4
+#color=#64acff
+#interval=1
+#signal=1
 
 [battery]
 interval=2
@@ -31,5 +43,5 @@ command=/home/crafty/.config/i3blocks/battery.sh
 
 [time]
 color=#64acff
-command=if [ $button ]; then /home/crafty/.config/i3blocks/calendar.sh && date '+%Y/%m/%d %H:%M:%S'; else date '+%Y/%m/%d %H:%M:%S';fi
+command=if [ $button ]; then echo -n " "; /home/crafty/.config/i3blocks/calendar.sh && date '+%Y/%m/%d %H:%M:%S'; else echo -n " "; date '+%Y/%m/%d %H:%M:%S'; fi
 interval=1
