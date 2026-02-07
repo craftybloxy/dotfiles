@@ -2,13 +2,13 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 alias "p"="paru"
-alias "po"="paru -Rsn $(pacman -Qdtq)"
+alias "po"="paru -Rns $(pacman -Qdtq)"
 alias "co"="vscodium -g"
-alias "dv"="devour"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vpn="sudo openvpn --config ~/AirVPN.ovpn"
+alias hx="helix"
 set -g fish_greeting
-bind \cs "source ./venv/bin/activate.fish && echo "--venv--""
+bind \cs "source ./.venv/bin/activate.fish && echo "--venv--""
 set EDITOR hx
 
 #yazi stuff

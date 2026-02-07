@@ -19,7 +19,7 @@ fi
 
 # Output based on mute status
 if [ "$mute" == "Mute: yes" ]; then
-  echo "$sink_type $default_sink"
+  echo "$sink_type $default_sink --%"
 else
-  echo "$sink_type $default_sink"
+  echo "$sink_type $default_sink $volume"
 fi
