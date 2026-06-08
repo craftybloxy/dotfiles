@@ -1,25 +1,18 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-alias "p"="paru"
-alias "po"="paru -Rns $(pacman -Qdtq)"
-alias "co"="vscodium -g"
+alias p="paru"
+alias pu="nice -n 19 ionice -c 3 paru -Syu --noconfirm"
+alias po="paru -Rns $(pacman -Qdtq)"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vpn="sudo openvpn --config ~/AirVPN.ovpn"
-alias hx="helix"
+alias fs="fresh"
 set -g fish_greeting
 bind \cs "source ./.venv/bin/activate.fish && echo "--venv--""
-set EDITOR hx
-
-#yazi stuff
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-    end
-    rm -f -- "$tmp"
-end
+set EDITOR fs
 
 # uv
 fish_add_path "/home/crafty/.local/bin"
+
+string match -q "$TERM_PROGRAM" vscode
+and . (code --locate-shell-integration-path fish)

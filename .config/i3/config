@@ -49,7 +49,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/crafty/.config/i3/l
 exec --no-startup-id picom
 
 #gpaste saved cliboard history
-exec --no-startup-id/usr/lib/gpaste/gpaste-daemon
+exec --no-startup-id /usr/lib/gpaste/gpaste-daemon
 
 
 #Nitrogen sets the wallpaper
@@ -60,6 +60,9 @@ exec --no-startup-id xset s off -dpms
 
 # Autostart .desktop
 exec --no-startup-id dex -a
+
+# Autostart polkit
+exec --no-startup-id lxqt-policykit-agent
 
 #
 # KEYBINDINGS TO START APPS
@@ -112,7 +115,6 @@ bindsym shift+KP_Down exec brightnessctl s 1000- > /dev/null
 
 # Clipboard screenshots
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png 
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png 
 #bindsym Ctrl+Shift+Print exec --no-startup-id maim -s /tmp/screenshot.png && dragon-drop /tmp/screenshot.png
 #Multi screen specific settings
@@ -139,10 +141,10 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+m focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+m focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -151,10 +153,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+m move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+m move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -245,7 +247,13 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m '' -B 'Exit' 'i3-msg exit'"
+# set to dark theme
+bindsym $mod+m exec  "gsettings set org.gnome.desktop.interface gtk-theme 'Vimix-dark-doder'; nwg-look -x;"
+# set to light theme
+bindsym $mod+l exec  "gsettings set org.gnome.desktop.interface gtk-theme 'Vimix-light-doder'; nwg-look -x;" 
 
+#
+# 
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -279,7 +287,7 @@ bar {
     colors {
         background #000000 
 
-        focused_workspace   #000000 #000000 #e60020
+        focused_workspace   #000000 #000000 #FF1800
         active_workspace    #000000 #000000 #9697cd
         inactive_workspace  #000000 #000000 #fdf6e3
 	}
