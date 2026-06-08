@@ -1,0 +1,13 @@
+# Paths to back up — relative to / (no leading slash).
+# Everything runs under sudo with rsync -aAX, so file AND directory
+# permissions, ownership, ACLs and xattrs are preserved faithfully
+# in both directions. Blank lines and # comments are ignored.
+
+etc/lightdm/lightdm.conf
+etc/X11/xorg.conf.d/40-libinput.conf
+etc/environment
+#home/crafty/.config/chromium/Default
+#home/crafty/Music/
+#home/crafty/Documents
+home/crafty/Documents/Art
+#home/crafty/Games
