@@ -19,7 +19,7 @@ elif [[ "${BATTERY_STATE}" = "Discharging" ]]; then
   
   if [[ "${BATTERY_POWER}" -le "${URGENT_VALUE}" ]]; then
     echo "#cc241d"
-    notify-send -u critical "Battery low!" "Plug your laptop"
+    notify-send -u critical -t 1000  "Battery low!" "Plug your laptop"
   else
     echo "#00BEE1"
   fi

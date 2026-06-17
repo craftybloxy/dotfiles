@@ -48,6 +48,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/crafty/.config/i3/l
 #Picom is a compositor
 exec --no-startup-id picom
 
+# Mega is a cloud syncing service
+exec --no-startup-id mega-cmd-server
+
+
 #gpaste saved cliboard history
 exec --no-startup-id /usr/lib/gpaste/gpaste-daemon
 
@@ -237,7 +241,7 @@ bindsym $mod+Shift+egrave move container to workspace number $ws7
 bindsym $mod+Shift+underscore move container to workspace number $ws8
 bindsym $mod+Shift+ccedilla move container to workspace number $ws9
 bindsym $mod+Shift+agrave move container to workspace number $ws10
-
+#
 #Toggle i3bar
 bindsym $mod+b bar mode toggle
 
@@ -294,5 +298,8 @@ bar {
     position top
     status_command i3blocks
     font pango:Adwaita Mono 10
+    mode hide
+    hidden_state hide
+    modifier off
 }
 

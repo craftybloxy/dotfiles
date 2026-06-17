@@ -1,7 +1,7 @@
 {
     "discordBranch": "stable",
     "minimizeToTray": true,
-    "arRPC": false,
+    "arRPC": true,
     "spellCheckLanguages": [
         "fr",
         "fr-FR",
@@ -11,5 +11,6 @@
     "splashBackground": "rgb(18, 18, 20)",
     "openLinksWithElectron": false,
     "staticTitle": true,
-    "enableMenu": false
+    "enableMenu": false,
+    "disableSmoothScroll": false
 }

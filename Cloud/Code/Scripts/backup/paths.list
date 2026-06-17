@@ -3,11 +3,13 @@
 # permissions, ownership, ACLs and xattrs are preserved faithfully
 # in both directions. Blank lines and # comments are ignored.
 
+etc/default/grub
 etc/lightdm/lightdm.conf
+etc/lightdm/lightdm-gtk-greeter.conf
+etc/tlp.conf
+etc/xdg/reflector/reflector.conf
 etc/X11/xorg.conf.d/40-libinput.conf
 etc/environment
-#home/crafty/.config/chromium/Default
-#home/crafty/Music/
-#home/crafty/Documents
-home/crafty/Documents/Art
-#home/crafty/Games
+home/crafty/AirVPN.ovpn
+home/crafty/.config/chromium/Default
+home/crafty/Cloud/Games/
