@@ -1,0 +1,26 @@
+[Desktop Entry]
+Name=Steam Lite
+Comment=Minimal Steam launch — small mode, no friends UI, no browser
+Exec=/usr/bin/steam -nofriendsui -no-browser -silent -vgui +open "steam://open/minigameslist"
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Game;
+MimeType=x-scheme-handler/steam;
+Actions=Library;BigPicture;Settings;
+PrefersNonDefaultGPU=true
+X-KDE-RunOnDiscreteGpu=true
+StartupNotify=false
+Path=
+
+[Desktop Action Library]
+Name=Library
+Exec=/usr/bin/steam steam://open/games
+
+[Desktop Action BigPicture]
+Name=Big Picture
+Exec=/usr/bin/steam steam://open/bigpicture
+
+[Desktop Action Settings]
+Name=Settings
+Exec=/usr/bin/steam steam://open/settings
