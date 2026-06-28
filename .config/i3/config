@@ -53,7 +53,7 @@ exec --no-startup-id mega-cmd-server
 
 
 #gpaste saved cliboard history
-exec --no-startup-id /usr/lib/gpaste/gpaste-daemon
+exec --no-startup-id gpaste-client start
 
 
 #Nitrogen sets the wallpaper
@@ -298,7 +298,6 @@ bar {
     position top
     status_command i3blocks
     font pango:Adwaita Mono 10
-    mode hide
     hidden_state hide
     modifier off
 }

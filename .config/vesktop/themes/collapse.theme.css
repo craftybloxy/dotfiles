@@ -1,0 +1,47 @@
+/**
+ * @name kompact
+ * @author Sharkota
+ * @authorLink https://github.com/sharkota
+ * @description Hoverable Sidebars
+ * @license GPL-3.0
+ * @version 1.0
+ * @source https://github.com/sharkota/kompact
+ * @donate $DakotaWarrenWood
+*/
+
+/* Smooth transitions require hardware acceleration to look good, if you prefer not to use them set "transition-time" var to 0*/
+
+:root{
+    --transition-time: 0.3s;
+}
+
+#app-mount > div.appAsidePanelWrapper_a3002d > div.notAppAsidePanel_a3002d > div.app_a3002d > div > div.layers__960e4.layers__160d8 > div > div > nav{
+    position: absolute;
+    z-index: 12;
+    margin-top: 48px;
+    height: 50px;
+    opacity: 0%;
+    transition-duration: var(--transition-time);
+    transition-property: opacity;
+}
+
+#app-mount > div.appAsidePanelWrapper_a3002d > div.notAppAsidePanel_a3002d > div.app_a3002d > div > div.layers__960e4.layers__160d8 > div > div > div > div > div.sidebar_c48ade{
+    position: absolute;
+    z-index: 10;
+    margin-left: 72px;
+    height: 100px;
+    opacity: 0%;
+    transition-duration: var(--transition-time);
+    transition-property: opacity;
+}
+
+#app-mount > div.appAsidePanelWrapper_a3002d > div.notAppAsidePanel_a3002d > div.app_a3002d > div > div.layers__960e4.layers__160d8 > div > div > nav:hover{
+    height: 100%;
+    opacity: 100%;
+}
+
+#app-mount > div.appAsidePanelWrapper_a3002d > div.notAppAsidePanel_a3002d > div.app_a3002d > div > div.layers__960e4.layers__160d8 > div > div > div > div > div.sidebar_c48ade:hover{
+    height: 100%;
+    opacity: 100%;
+    margin-left: 0%;
+}
